@@ -96,9 +96,9 @@ const ToDoControllers = {
         try {
 
             const { id } = req.params;
-            const { caption, description, completed } = req.body;
+            const { caption, description } = req.body;
             
-
+            console.log(caption,description);
             if(!id){
                 return res
                         .status(SC.BAD_REQUEST)
@@ -109,7 +109,7 @@ const ToDoControllers = {
                         });
             };
 
-            if(!caption || !description || !completed){
+            if(!caption || !description ){
                 return res
                         .status(SC.BAD_REQUEST)
                         .json({
@@ -134,7 +134,6 @@ const ToDoControllers = {
 
            todoData.caption = caption;
            todoData.description = description;
-           todoData.completed = completed;
 
            await todoData.save();
 
@@ -159,12 +158,80 @@ const ToDoControllers = {
         };
     },
 
+
+    //updating completed or not todo task
+
+    updateCompleted: async ( req: Request, res: Response ) => {
+
+        try {
+
+            const { id } = req.params;
+            const { completed } = req.body;
+
+            console.log(completed)
+            if(!id){
+                return res
+                        .status(SC.BAD_REQUEST)
+                        .json({
+                            success:false,
+                            message:"Id did not recived",
+                            data:null,
+                        });
+            };
+
+            if(completed === null){
+                return res
+                        .status(SC.BAD_REQUEST)
+                        .json({
+                            success:false,
+                            message:"Completed is not recived",
+                            data:null,
+                        });
+            };
+
+            const data = await ToDo.findById(id);
+
+            if(!data){
+                return res
+                        .status(SC.BAD_REQUEST)
+                        .json({
+                            success:false,
+                            message:"No Todo founds",
+                            data:null,
+                        });
+            };
+
+            data.completed = completed;
+
+            await data.save();
+
+            return res
+                    .status(SC.OK)
+                    .json({
+                        success:true,
+                        message:"Task completed successfully",
+                        data:data,
+                    })
+
+            
+        } catch (error:any) {
+            return res
+                    .status(SC.INTERNAL_SERVER_ERROR)
+                    .json({
+                        success:false,
+                        message:error.message,
+                        data:null,
+                    })
+        }
+
+    },
+
     //deleting the todo data
     deleteTodo: async ( req: Request, res: Response ) => {
         try {
 
             const { id } = req.params;
-
+            console.log(id)
             if(!id){
                 return res
                         .status(SC.BAD_REQUEST)
