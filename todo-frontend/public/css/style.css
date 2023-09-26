@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background: #f3f5f9;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .row {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .row .column {
+  width: 80%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .row .column .createTodo {
+  width: 90%;
+  height: 250px;
+  margin-top: 20px;
+  background: #c0c3d1;
+}
+.container .row .column .createTodo .form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .row .column .createTodo .form h3 {
+  font-size: 25px;
+  color: #080906;
+}
+.container .row .column .createTodo .form .caption {
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+.container .row .column .createTodo .form .caption input {
+  width: 60%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding: 0px 10px;
+  font-size: 16px;
+}
+.container .row .column .createTodo .form .caption label {
+  margin-left: 10px;
+  color: #080906;
+}
+.container .row .column .createTodo .form .description {
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+.container .row .column .createTodo .form .description textarea {
+  width: 60%;
+  height: 80px;
+  border: none;
+  border-radius: 5px;
+  padding: 0px 10px;
+  font-size: 16px;
+  resize: none;
+}
+.container .row .column .createTodo .form .description label {
+  margin-left: 10px;
+  color: #080906;
+}
+.container .row .column .createTodo .form .button input {
+  background: #84a7dc;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  color: #080906;
+  font-size: 20px;
+  font-weight: bold;
+}
+.container .row .column .createTodo .form .button input:hover {
+  background: #0079FF;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.container .row .column .displayTodo {
+  width: 90%;
+  height: 250px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tododiv {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+  background: #c0c3d1;
+}
+.tododiv .conntent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tododiv .conntent .checkedinput input {
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px 0px 10px;
+}
+.tododiv .conntent .textvalue {
+  margin: 0px 0px 0px 10px;
+}
+.tododiv .action {
+  margin-right: 10px;
+}
+.tododiv .action .editIcon {
+  color: #0079FF;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.tododiv .action .deleteIcon {
+  color: #ff1500;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.editModal {
+  width: 400px;
+  height: 300px;
+  background: #7C81AD;
+  border-radius: 10px;
+}
+.editModal .hnadleSubmitUpdate {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 5px;
+  border-bottom: 0.5px solid #f3f5f9;
+}
+.editModal .hnadleSubmitUpdate h3 {
+  color: #f3f5f9;
+}
+.editModal .hnadleSubmitUpdate span {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #f3f5f9;
+  border-radius: 5px;
+  color: #c0c3d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editModal .hnadleSubmitUpdate span:hover {
+  color: #f3f5f9;
+  cursor: pointer;
+}
+.editModal .updatetodo {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.editModal .updatetodo input[type=text] {
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline-color: #84a7dc;
+  padding: 0px 15px;
+}
+.editModal .updatetodo input[type=submit] {
+  width: 50%;
+  height: 40px;
+  background: #84a7dc;
+  color: #f3f5f9;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.editModal .updatetodo input[type=submit]:hover {
+  cursor: pointer;
+  background: #0079FF;
+  transition: 0.5s ease-in-out;
+}/*# sourceMappingURL=style.css.map */

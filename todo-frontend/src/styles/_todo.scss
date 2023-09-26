@@ -1,0 +1,54 @@
+@import './colors';
+
+
+.tododiv{
+    width: 100%;
+    height:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    border-radius: 10px;
+    background: $bg-color2;
+
+
+    .conntent{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .checkedinput{
+
+            input{
+                width: 30px;
+                height: 30px;
+                margin: 0px 10px 0px 10px;
+            }
+        }
+    
+        .textvalue{
+            margin: 0px 0px 0px 10px;
+    
+        }
+    }
+
+    .action{
+        margin-right: 10px;
+
+        .editIcon{
+            color: $btn-color2;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .deleteIcon{
+            color: $danger-color;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+    
+    
+}
